@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151515">
+  <meta name="description" content="A thoughtful workspace for Mai-Dabino Clothing customers, measurements and orders.">
+  <title>Mai-Dabino Clothing | Atelier</title>
+  <link rel="icon" href="assets/mai-dabino-logo.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand-lockup" href="#dashboard" aria-label="Mai-Dabino Clothing dashboard">
+        <img src="assets/mai-dabino-logo.jpeg" alt="" class="brand-logo">
+        <span class="brand-wordmark">MAI-DABINO<small>CLOTHING · EST. 2020</small></span>
+      </a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="main-nav" id="main-nav">
+        <button class="nav-link active" data-page="dashboard"><span class="nav-icon">⌂</span>Overview</button>
+        <button class="nav-link" data-page="customers"><span class="nav-icon">♙</span>Customers</button>
+        <button class="nav-link" data-page="orders"><span class="nav-icon">▤</span>Orders &amp; history</button>
+        <button class="nav-link" data-page="payments"><span class="nav-icon">₦</span>Payments</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-link" data-page="settings"><span class="nav-icon">⚙</span>Settings</button>
+        <div class="sidebar-note"><span class="status-dot"></span><span>Private &amp; stored on this device</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="mobile-brand"><img src="assets/mai-dabino-logo.jpeg" alt=""><span>MAI-DABINO</span></div>
+        <div class="topbar-context"><span class="topbar-date" id="today-label"></span><span class="context-divider"></span><span>Atelier workspace</span></div>
+        <button class="button button-dark topbar-action" data-action="new-order"><span class="button-plus">＋</span> New measurement</button>
+      </header>
+      <div id="view-root" class="view-root" aria-live="polite" aria-busy="true">
+        <div class="skeleton-page" role="status" aria-label="Loading atelier">
+          <div class="skeleton-hero"><span></span><i></i></div>
+          <div class="skeleton-heading"><span></span><b></b></div>
+          <div class="skeleton-stats"><i></i><i></i><i></i><i></i></div>
+          <span class="sr-only">Loading your saved records…</span>
+        </div>
+      </div>
+    </main>
+  </div>
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <button class="mobile-nav-item active" data-page="dashboard"><span>⌂</span><small>Home</small></button>
+    <button class="mobile-nav-item" data-page="customers"><span>♙</span><small>Clients</small></button>
+    <button class="mobile-nav-item mobile-add" data-action="new-order" aria-label="New measurement"><span>＋</span></button>
+    <button class="mobile-nav-item" data-page="orders"><span>▤</span><small>Orders</small></button>
+    <button class="mobile-nav-item" data-page="settings"><span>⚙</span><small>More</small></button>
+  </nav>
+  <dialog id="app-dialog" class="app-dialog" aria-labelledby="dialog-title">
+    <div id="dialog-content"></div>
+  </dialog>
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <div id="print-root" aria-hidden="true"></div>
+</body>
+</html>
